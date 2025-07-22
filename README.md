@@ -1,12 +1,12 @@
 # PRODIGY_CS_04
-# PRODIGY_CS_03
-Building a Password Complexity Checker
+Building a keylogger.
 
 ### OBJECTIVE
-Building a tool that assesses the strength of a password based on criteria such as length, presence of uppercase and lowercase letters, numbers, and special characters. Provide feedback to users on the password's strength.
+Create a basic keylogger program that records and logs keystrokes. Focus on logging the keys pressed and saving them to a file. 
 
 ### SKILLS LEARNED
-* I mastered the use of Regular expereince in python
+* I learnt how to import Python library
+* I learnt how to use "pynput."
 * I mastered hownto use logic fuction( fuction like: if, else, elif)
 * learnt how to make Python code work like an application with the simple call of a function
 * learnt how to turn Python code into a Windows and Android application. 
@@ -16,16 +16,18 @@ Building a tool that assesses the strength of a password based on criteria such 
 
 
 ### STEPS/PROCESS
-* I import "regex" fuction.
-* i define Scoring Logic where i assign points as score based on the presence of all elemenet that will help user make a strong password. Example:
-  * Length greater then 12 characters: +2 points
-  * Contains uppercase: +1
-  * Contains lowercase: +1
-  * Contains numbers: +1
-  * Contains special characters: +1
-  * Evaluate the Password Use regular expressions (regex) to detect these criteria.
-* I provide Feedback Based on the score point.
-* I create a fuction to make the aplication usable. 
-
+* I import pynput from the Python library
+* I import 'Listener' from pynput.keyboard
+* I define a function to write to a file with pynput listener
+* I created a file with the {"open with(---, 'a') as file: } that keyboard strokes will be appended to
+* I create a filter rule with an if statement to format capture keys to only alphanumeric and special characters pressed on the keyboard. example:
+  *  keydata = keydata.replace("'", "")
+    
+  * if keydata == "Key.space":
+        keydata = " "
+    
+  * if keydata == "Key.enter":
+        keydata = "\n"
+    
 ### PROJECT CODE
 [![Python](https://img.shields.io/badge/Python-Task_Code-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://github.com/Mayorb909/PRODIGY_CS_03/blob/main/Code)
